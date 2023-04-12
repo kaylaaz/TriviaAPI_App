@@ -1,6 +1,4 @@
-import logo from './logo.svg';
 import './App.css';
-import React, { useEffect, useState } from 'react';
 import Question from './Question';
 
 function Quiz({ results }) {
@@ -15,7 +13,7 @@ function Quiz({ results }) {
                     <Question key={"question" + index} info={item} />
                 )
             })}
-        </div> /* When click button, we want to get a new set of questions. UseState? */
+        </div>
     );
 }
 

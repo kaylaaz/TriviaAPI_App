@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Quiz from "./Quiz.js"
 import React, { useEffect, useState } from 'react';
@@ -12,7 +11,6 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         setResults(data.results);
-        //console.log(data.results); //to get first question: data.results[0].question
       })
       .catch((error) => {
         console.log(error);
@@ -23,18 +21,9 @@ function App() {
   return (
     <div className="App">
       <Quiz results={results} />
-    </div> /* When click button, we want to get a new set of questions. UseState? */
+    </div>
   );
 }
-//<button onClick={() => correctAnswer()}>Get More Questions</button>
-//      <button onClick={() => getQuestions()}>Get More Questions</button>
-{/* <div>
-{
-  Object.keys(vals).map((key, index) => ( 
-    <p key={index}> {key} {vals[key]} </p> 
-  ))
-}
-</div> */}
 
 export default App;
 
@@ -158,17 +147,3 @@ export default App;
 
 
 
-
-
-
-
-// export default function Quiz() {
-//   const [questions, setQuestions] = useState([]);
-//   console.log(questions);
-// }
-
-// const generateQuestions = (setData) => {
-//   fetch("https://opentdb.com/api.php?amount=10&category=12&difficulty=easy&type=boolean")
-//     .then((response) => response.json())
-//     .then((data) => setData(data.results));
-// }
